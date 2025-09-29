@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class StudentServlet
  */
-@WebServlet("/login")
+@WebServlet("/student")
 public class StudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,20 +31,7 @@ public class StudentServlet extends HttpServlet {
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String email = request.getParameter("email");
-		String password  = request.getParameter("password");
-		StudentDAO studentService = new StudentDAO();
-		Student student = studentService.getStudentByEmail(email, password);
-			
-		if (student != null) {
-		    request.setAttribute("student", student);
-		    RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-		    dispatcher.forward(request, response);
-		} else {
-		    request.setAttribute("error", "email or password is incorrect! ");
-		    RequestDispatcher dispatcher = request.getRequestDispatcher("student-form.jsp");
-		    dispatcher.forward(request, response);
-		}
+	
 	}
 
 	/**
