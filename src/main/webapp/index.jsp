@@ -14,10 +14,10 @@
 
 <%
 //allow access only if session exists
-Student student = null;
+/* Student student = null;
 if(session.getAttribute("student") == null){
 	response.sendRedirect("login.html");
-}else student = (Student) session.getAttribute("student");
+}else student = (Student) session.getAttribute("student"); */
 String studentName = null;
 String sessionID = null;
 Cookie[] cookies = request.getCookies();
@@ -43,6 +43,7 @@ for(Cookie cookie : cookies){
         <a href="<%=response.encodeURL("student-form.jsp") %>"> Please Login</a>
     </c:otherwise>
 </c:choose>
+	
 	
 
 
