@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h1>
-		Create Student
+		Login
 	</h1>
 	
 	<form method="POST" action="login" class="form">
